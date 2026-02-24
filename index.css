@@ -1,0 +1,157 @@
+:root {
+  --primary: #0066cc;
+  --success: #28a745;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  background: var(--light);
+  color: #222;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+nav button, .auth-btn {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+nav button:hover, .auth-btn:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+h1, h2 { margin-top: 0; }
+h2 { color: var(--primary); }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.form-grid > * {
+  grid-column: span 2;
+}
+
+.form-grid input[type="date"],
+.form-grid input[type="number"] {
+  grid-column: span 1;
+}
+
+input, textarea, select, button {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.success { background: var(--success); }
+button.danger  { background: var(--danger); }
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.item-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.item-img-placeholder {
+  height: 180px;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.item-content {
+  padding: 1.2rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.status-lost  { background: #fff3cd; color: #856404; }
+.status-found { background: #d4edda; color: #155724; }
+.status-claimed { background: #cce5ff; color: #004085; }
+
+.auth-screen {
+  max-width: 420px;
+  margin: 8vh auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.hidden { display: none !important; }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 0.9rem;
+  border-top: 1px solid #eee;
+  margin-top: 4rem;
+}

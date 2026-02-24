@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lost & Found • Addis Ababa</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Lost & Found WKU</h1>
+  
+  <nav id="main-nav" class="hidden">
+    <button onclick="showSection('report-lost')">Report Lost</button>
+    <button onclick="showSection('report-found')">Report Found</button>
+    <button onclick="showSection('search')">Search</button>
+    <button onclick="showSection('stats')">Statistics</button>
+    <button class="danger" onclick="logout()">Logout</button>
+  </nav>
+</header>
+
+<div class="container">
+  <div id="auth-screen" class="auth-screen">
+    <h2>Welcome</h2>
+    <p>Please sign in to continue</p>
+    <div style="margin: 1.5rem 0;">
+      <input type="text" id="username" placeholder="Username" style="width:100%; margin-bottom:12px;">
+      <input type="password" id="password" placeholder="Password" style="width:100%; margin-bottom:12px;">
+    </div>
+    <button style="width:100%; padding:14px; font-size:1.1rem;" onclick="login()">Sign In</button>
+    <p style="text-align:center; margin-top:1.5rem; color:#666;">
+      <small>(demo — any username + password works • data saved in browser)</small>
+    </p>
+  </div>
+
+  <div id="main-content" class="hidden">
+    <div id="report-lost" class="card">
+      <h2>Report Lost Item</h2>
+      <div class="form-grid">
+        <input id="lost-title" placeholder="Item name / description" required>
+        <input id="lost-category" placeholder="Category (phone, bag, wallet...)">
+        <input id="lost-location" placeholder="Last seen location">
+        <input id="lost-date" type="date">
+        <input id="lost-reward" type="number" placeholder="Reward (ETB) - optional">
+        <textarea id="lost-details" rows="4" placeholder="Additional details..."></textarea>
+        <input id="lost-contact" placeholder="Your phone / Telegram" required>
+      </div>
+      <button style="margin-top:1.5rem;" onclick="reportLostItem()">Submit Lost Item</button>
+    </div>
+
+    <div id="report-found" class="card hidden">
+      <h2>Report Found Item</h2>
+      <div class="form-grid">
+        <input id="found-title" placeholder="Item name / description" required>
+        <input id="found-category" placeholder="Category">
+        <input id="found-location" placeholder="Found location">
+        <input id="found-date" type="date">
+        <textarea id="found-details" rows="4" placeholder="Description / special marks..."></textarea>
+        <input id="found-contact" placeholder="Your phone / Telegram" required>
+      </div>
+      <button style="margin-top:1.5rem;" class="success" onclick="reportFoundItem()">Submit Found Item</button>
+    </div>
+
+    <div id="search" class="card hidden">
+      <h2>Search Items</h2>
+      <input id="search-keyword" placeholder="Search keyword..." style="width:100%; margin-bottom:1rem;">
+      <button onclick="searchLostItem()">Search Lost Items</button>
+      <button onclick="searchFoundItem()" style="margin-left:0.8rem;">Search Found Items</button>
+      <h3 style="margin-top:2rem;">Results</h3>
+      <div id="search-results" class="item-grid"></div>
+    </div>
+
+    <div id="all-lost" class="card hidden">
+      <h2>All Lost Items</h2>
+      <button onclick="displayAllLostItem()">Refresh</button>
+      <div id="lost-items-container" class="item-grid"></div>
+    </div>
+
+    <div id="all-found" class="card hidden">
+      <h2>All Found Items</h2>
+      <button onclick="displayAllFoundItem()">Refresh</button>
+      <div id="found-items-container" class="item-grid"></div>
+    </div>
+
+    <div id="stats" class="card hidden">
+      <h2>Statistics</h2>
+      <div id="stats-content"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  copyright &copy; 2026 • developed by ebisa abebe <a href="mailto/ebisaabebe123@gmail.com"><button >email</button></a>
+</footer>
+
+<script src="index.js"></script>
+</body>
+</html>
